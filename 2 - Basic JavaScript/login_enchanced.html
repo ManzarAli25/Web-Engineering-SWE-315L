@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Login Form</h1>
+    <div class="login-container">
+        <img src="your-image-url.jpg" alt="Login Image" class="login-image">
+        <form id="login-form">
+            <section>
+                <label for="login-id">Login ID:</label>
+                <input type="text" id="login-id" name="login-id" required>
+            </section>
+            <section>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </section>
+            <section>
+                <input type="checkbox" id="remember-me" name="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </section>
+            <section>
+                <input type="button" value="OK" onclick="validateAndLogin()">
+                <input type="button" value="Cancel" onclick="clearInputs()">
+            </section>
+        </form>
+    </div>
+
+    <script>
+        function findInputs() {
+            return document.querySelectorAll('#login-form input');
+        }
+
+        function validateInputs() {
+            let inputs = findInputs();
+            for (let input of inputs) {
+                if (input.hasAttribute('required') && !input.value) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function validateAndLogin() {
+            if (!validateInputs()) {
+                alert("Please fill in all mandatory fields.");
+                return;
+            }
+            login();
+        }
+
+        function login() {
+            let rememberMe = document.getElementById('remember-me').checked;
+            if (rememberMe) {
+                alert("Logged in successfully with Remember Me marked as set");
+            } else {
+                alert("Logged in successfully");
+            }
+        }
+
+        function clearInputs() {
+            let inputs = findInputs();
+            for (let input of inputs) {
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

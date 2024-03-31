@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+}
+
+label, input[type="text"], input[type="password"], input[type="button"] {
+    color: black;
+}
+
+input[type="text"], input[type="password"] {
+    border: 1px solid #ccc;
+}
+
+.login-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 10px;
+    text-align: right;
+}
